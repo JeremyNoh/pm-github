@@ -1,6 +1,8 @@
 var {ipcRenderer, remote} = require('electron');
 var main = remote.require("./main.js");
 const axios = require('axios');
+// const Api = require("./Api.js");
+
 
 
 function SearchPressEnter(e) {
@@ -17,8 +19,10 @@ function buttonSearch() {
         ipcRenderer.send('async', Value);
 
         getRepos(Value)
+        // var getRepos = New Api().getRepos(Value)
 
 }
+
 
 
 function getRepos(value){
